@@ -5,6 +5,10 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <style type="text/css" class="init">
+	
+	</style>
 <script type="text/javascript" class="init">
 	
 $(document).ready(function() {
@@ -65,7 +69,7 @@ $(document).ready(function() {
                         <f:facet name="header">
                             <h:outputText value=" "/>
                         </f:facet>
-                        <h:commandLink action="#{produtosController.prepareView}" value="Editar"/>
+                        <h:commandLink action="#{produtosController.prepareView(item.idProdutos)}" value="Editar"/>
                     </h:column>
                 </h:dataTable>				
             </h:form>

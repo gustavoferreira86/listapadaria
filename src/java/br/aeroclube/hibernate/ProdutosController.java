@@ -91,8 +91,8 @@ public class ProdutosController {
         }
     }
     
-    public String prepareView(){
-        produto = (Produtos) getProdutos().getRowData();
+    public String prepareView(int id){
+        produto = (Produtos) helper.getProdutosList(id);
         list = getList();
         return "EditarProduto";
     }
@@ -106,7 +106,7 @@ public class ProdutosController {
         return "AddProduto";
     }
     
-    public String adicionar() {
+    public String adicionar(int id) {
         if(produto==null)
             preparaAdicionar();
         helper.saveOrUpdate(produto);

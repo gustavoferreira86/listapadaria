@@ -46,7 +46,7 @@ public class ProdutosHelper {
     return produtosList;
     }
     
-    public List getProdutosList(int id) {
+    public Produtos getProdutosList(int id) {
         List<Produtos> produtosList = null;
         try {
             verificaSession();
@@ -58,7 +58,7 @@ public class ProdutosHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    return produtosList;
+    return (Produtos) produtosList.get(0);
     }
     
     public void saveOrUpdateFornecedores(Fornecedores fornecedores) {
