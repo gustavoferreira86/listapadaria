@@ -82,13 +82,8 @@ public class ProdutosController {
 
     public String setCurrent(int current) {
         ProdutosHelper helper = new ProdutosHelper();
-        List l = helper.getProdutosList(current);
-        if(!l.isEmpty()) {
-            this.current = (Produtos) l.get(0);
-            return this.current.getNomeProduto();
-        } else {
-            return "";
-        }
+        this.current = helper.getProdutosList(current);
+        return this.current.getNomeProduto();
     }
     
     public String prepareView(int id){
