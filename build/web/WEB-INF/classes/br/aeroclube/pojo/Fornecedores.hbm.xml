@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/07/2016 08:40:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.aeroclube.pojo.Fornecedores" table="fornecedores" catalog="produtos" optimistic-lock="version">
+        <id name="idFornecedores" type="int">
+            <column name="idFornecedores" />
+            <generator class="increment"/>
+        </id>
+        <property name="nomeFornecedor" type="string">
+            <column name="nomeFornecedor" length="45" />
+        </property>
+        <set name="produtoses" cascade="all" table="produtos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Fornecedores_idFornecedores" not-null="true" />
+            </key>
+            <one-to-many class="br.aeroclube.pojo.Produtos" />
+        </set>
+    </class>
+</hibernate-mapping>

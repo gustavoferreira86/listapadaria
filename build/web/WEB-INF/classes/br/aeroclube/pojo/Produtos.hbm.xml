@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/07/2016 08:40:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.aeroclube.pojo.Produtos" table="produtos" catalog="produtos" optimistic-lock="version">
+        <id name="idProdutos" type="int">
+            <column name="idProdutos" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fornecedores" class="br.aeroclube.pojo.Fornecedores" fetch="select">
+            <column name="Fornecedores_idFornecedores" not-null="true" />
+        </many-to-one>
+        <many-to-one name="categoria" class="br.aeroclube.pojo.Categoria" fetch="select">
+            <column name="Categoria_idCategoria" not-null="true" />
+        </many-to-one>
+        <property name="nomeProduto" type="string">
+            <column name="nomeProduto" length="45" />
+        </property>
+        <property name="precoProduto" type="string">
+            <column name="precoProduto" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

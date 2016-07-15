@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/07/2016 08:40:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.aeroclube.pojo.Categoria" table="categoria" catalog="produtos" optimistic-lock="version">
+        <id name="idCategoria" type="java.lang.Integer">
+            <column name="idCategoria" />
+            <generator class="increment" />
+        </id>
+        <property name="nomeCategoria" type="string">
+            <column name="nomeCategoria" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
